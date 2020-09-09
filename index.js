@@ -26,26 +26,28 @@ console.log(fruit1);
 
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
-Number("1999");
+let number = "1999";
+Number(number);
+console.log(Number(number));
 
 
 //Task d: Write a function to multiply a*b 
 function multiply(a, b) {
-    const a = 5;
-    const b = 6;
-    return(a*b);
+    let total = a * b;
+    return total
 }
-
+console.log(multiply(2, 7));
 
 
 
 /************************************************************** Task 2 **************************************************************/
 //Age in Dog years
 //write a function that takes your age and returns it to you in dog years - they say that 1 human year is equal to seven dog years 
-
-
-
-
+function dogYears (myAge){
+    const x = myAge * 7;        
+    return x
+}
+console.log(dogYears(25));
 
 /************************************************************** Task 3 **************************************************************/
 //Dog feeder 
@@ -64,7 +66,29 @@ function multiply(a, b) {
 // 7 - 12 months 4% of their body weight
 
 // when you are finished invoke your function with the weight of 15 lbs and the age of 1 year - if your calculations are correct your result should be 0.44999999999999996
-  
+function dogFeeder (wgt, age) {
+    if(age >= 1 && wgt <= 5) {
+    return wgt * 0.05
+} if (age >= 1 && wgt >= 6 || wgt <= 10) {
+    return wgt * 0.04
+} if (age >= 1 && wgt >= 11 || wgt <= 15 ){
+    return wgt * 0.03
+} if (age >= 1 && wgt > 15){
+    return wgt * 0.02
+}
+}
+console.log(dogFeeder(15, 1));
+
+function puppyFeeder (wgt, age) {
+    if(age > 0.08 || age <= 0.3){
+        return wgt * 0.1
+    } else if (age >= 0.3 || age <= 0.58){
+        return wgt * 0.05
+    } else if (age >= 0.58 || age <= 0.99){
+        return wgt * 0.04
+    }
+}
+console.log(puppyFeeder(15, 1));
 
 
 
@@ -75,21 +99,48 @@ function multiply(a, b) {
 // it should return you won or you lost based on the rules of the game (you may need to look up the rules if you have not played before)
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
+function handGame(compChoice) {
+    const r = "rock"
+    const p = "paper"
+    const s = "scissors"
+    var compChoice = Math.random()
 
-  
+    if (compChoice == 1 && r == 1){
+        return "won"
+    } else if (compChoice < 1) {
+        return "lost"
+    } else if (compChoice == .5 && p == .5) {
+        return "won"
+    } else if (compChoice < .5) {
+        return "lost"
+    } else if (compChoice == .1 && s == .1){
+        return "won"
+    } else if (compChoice > .1) {
+        return "lost"
+    }
+}
+  console.log(handGame());
   
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
+function metricConverter(miles, km){
+    let total = km / miles;
+    return total
+}
+console.log(0.621, 1);
 
 
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
-  
-
+  function feetConverter (ft, cm){
+      let total = ft / cm;
+      return total
+  }
+console.log(12, 36);
 
 
 
@@ -127,8 +178,3 @@ function multiply(a, b) {
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Sissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
-
-
-
-
-
